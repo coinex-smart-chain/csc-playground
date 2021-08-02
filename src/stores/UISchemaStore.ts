@@ -8,15 +8,15 @@ export default createStore(() => {
 
   const defaultUISchema = {
     appBar: {
-      "ui:input": true,
+      "ui:input": false,
       "ui:inputPlaceholder": "Enter OpenRPC Document Url or rpc.discover Endpoint",
       /* tslint:disable */
-      "ui:logoUrl": "https://github.com/open-rpc/design/raw/master/icons/open-rpc-logo-noText/open-rpc-logo-noText%20(PNG)/128x128.png",
+      "ui:logoUrl": "https://raw.githubusercontent.com/coinex-smart-chain/docs/master/images/favicon.ico",
       /* tslint:enable */
-      "ui:splitView": true,
+      "ui:splitView": false,
       "ui:darkMode": false,
-      "ui:title": "Playground",
-      "ui:examplesDropdown": true,
+      "ui:title": "CoinEx Smart Chain",
+      "ui:examplesDropdown": false,
     },
     methods: {
       "ui:defaultExpanded": false,
