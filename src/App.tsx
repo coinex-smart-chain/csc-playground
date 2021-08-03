@@ -22,7 +22,7 @@ import OpenRPCEditor from "./OpenRPCEditor";
 import useMonacoReplaceMetaSchema from "./hooks/useMonacoReplaceMetaSchema";
 import useMonacoVimMode from "./hooks/useMonacoVimMode";
 import { IExample } from "./ExampleDocumentsDropdown/ExampleDocumentsDropdown";
-import Inspector from "@open-rpc/inspector";
+import Inspector from "@zhujiantao/inspector";
 import useInspectorActionStore from "./stores/inspectorActionStore";
 import { useTransport, defaultTransports, ITransport } from "./hooks/useTransport";
 import fetchUrlSchemaFile from "./fetchUrlSchemaFile";
