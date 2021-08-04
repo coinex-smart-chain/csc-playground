@@ -22,12 +22,14 @@ import OpenRPCEditor from "./OpenRPCEditor";
 import useMonacoReplaceMetaSchema from "./hooks/useMonacoReplaceMetaSchema";
 import useMonacoVimMode from "./hooks/useMonacoVimMode";
 import { IExample } from "./ExampleDocumentsDropdown/ExampleDocumentsDropdown";
-import Inspector from "@zhujiantao/inspector";
+import Inspector from "@open-rpc/inspector";
 import useInspectorActionStore from "./stores/inspectorActionStore";
 import { useTransport, defaultTransports, ITransport } from "./hooks/useTransport";
 import fetchUrlSchemaFile from "./fetchUrlSchemaFile";
 import queryParamsStore from "./stores/queryParamsStore";
 import { useDebounce } from "use-debounce";
+
+const defaultUrl = "https://rpc.coinex.net";
 
 const App: React.FC = () => {
   const [defaultValue, setDefaultValue] = useDefaultEditorValue();
@@ -212,9 +214,7 @@ const App: React.FC = () => {
         }}
         right={
           <>
-            <Inspector hideToggleTheme={true} url={
-              searchUrlDebounced && searchUrlDebounced.includes(".json") ? null : searchUrlDebounced
-            }
+            <Inspector hideToggleTheme={true} url={defaultUrl}
               transport={selectedTransportType.type !== "plugin" ? selectedTransportType.type : undefined}
               request={inspectorContents && inspectorContents.request}
               openrpcDocument={parsedSchema}
