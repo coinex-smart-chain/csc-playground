@@ -1,9 +1,11 @@
-# OpenRPC Playground
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=open-rpc/playground)](https://dependabot.com)
+# CSC OpenRPC Playground
 
 This is a tool for editing, validating and previewing [OpenRPC documents](https://spec.open-rpc.org/#openrpc-document).
 
+This repository is based on OpenRPC playground fork, we respect the great work of OpenRPC team very much.
+
 ## What is it?
+
 This is meant to be an all-in-one developer portal for [OpenRPC documents](https://spec.open-rpc.org/#openrpc-document). It includes an editor and a live-preview of the documentation.
 
 This helps developers visualize the OpenRPC and iterate very quickly on creating [OpenRPC documents](https://spec.open-rpc.org/#openrpc-document) via the built in editor tooling.
@@ -77,13 +79,13 @@ serve -s build -l 5000
 
 You can see the config in `/path-to-your-project/scripts/deploy/supervisor/csc-playground.conf`.
 
-##### Learn More
+#### Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-##### Contribution Resources
+#### Contribution Resources
 
 How to contribute, build and release are outlined in [CONTRIBUTING.md](CONTRIBUTING.md), [BUILDING.md](BUILDING.md) and [RELEASING.md](RELEASING.md) respectively. Commits in this repository follow the [CONVENTIONAL_COMMITS.md](CONVENTIONAL_COMMITS.md) specification.
 
@@ -106,6 +108,7 @@ Navigate to [playground.open-rpc.org](https://playground.open-rpc.org/) and star
 
 ## Resources and Inspirations
 
+- [open-rpc/playground](https://github.com/open-rpc/playground)
 - [open-rpc/spec](https://github.com/open-rpc/spec)
 - [open-rpc/docs-react](https://github.com/open-rpc/docs-react)
 - [Swagger Editor](https://editor.swagger.io/)
