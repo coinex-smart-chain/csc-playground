@@ -77,7 +77,7 @@ serve -s build -l 5000
 
 #### Run with Supervisor
 
-You can see the config in `/path-to-your-project/scripts/deploy/supervisor/csc-playground.conf`.
+You can see the config in `scripts/deploy/supervisor/csc-playground.conf`.
 
 #### Learn More
 
