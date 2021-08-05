@@ -58,7 +58,7 @@ class ApplicationBar extends Component<IProps> {
       <AppBar position="fixed" color="default" elevation={0} className={classes.appBar}>
         <Toolbar>
           <Grid alignItems="center" container>
-            <Grid item xs={6} sm={6} md={2} direction="row" container>
+            <Grid item xs={6} sm={6} md={3} direction="row" container style={{ flexWrap: "nowrap" }}>
               {this.props.uiSchema && this.props.uiSchema.appBar && this.props.uiSchema.appBar["ui:logoUrl"] &&
                 <Grid>
                   <img
@@ -74,8 +74,8 @@ class ApplicationBar extends Component<IProps> {
               </Grid>
             </Grid>
             <Hidden smDown>
-              <Grid item container justify="center" alignItems="center" sm={8} >
-                <Grid item>
+              <Grid item container justify="center" alignItems="center" sm={7} >
+                {/*<Grid item>
                   <TransportDropdown
                     transports={this.props.transportList}
                     onAddTransport={this.props.onTransportAdd}
@@ -85,7 +85,7 @@ class ApplicationBar extends Component<IProps> {
                       marginLeft: "10px",
                     }}
                   />
-                </Grid>
+                </Grid>*/}
                 <Grid item sm={6}>
                   {this.props.uiSchema && this.props.uiSchema.appBar && this.props.uiSchema.appBar["ui:input"] &&
                     <Paper style={{

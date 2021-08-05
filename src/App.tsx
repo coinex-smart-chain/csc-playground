@@ -29,6 +29,8 @@ import fetchUrlSchemaFile from "./fetchUrlSchemaFile";
 import queryParamsStore from "./stores/queryParamsStore";
 import { useDebounce } from "use-debounce";
 
+const defaultUrl = "https://rpc.coinex.net";
+
 const App: React.FC = () => {
   const [defaultValue, setDefaultValue] = useDefaultEditorValue();
   const [markers, setMarkers] = useState<monaco.editor.IMarker[]>([] as monaco.editor.IMarker[]);
@@ -66,7 +68,7 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const defaultExample = examples.find((e) => e.name === "petstore");
+    const defaultExample = examples.find((e) => e.name === "csc");
     if (!defaultValue && !searchUrl && defaultExample) {
       setSearchUrl(defaultExample.url);
     }
@@ -212,9 +214,7 @@ const App: React.FC = () => {
         }}
         right={
           <>
-            <Inspector hideToggleTheme={true} url={
-              searchUrlDebounced && searchUrlDebounced.includes(".json") ? null : searchUrlDebounced
-            }
+            <Inspector hideToggleTheme={true} url={defaultUrl}
               transport={selectedTransportType.type !== "plugin" ? selectedTransportType.type : undefined}
               request={inspectorContents && inspectorContents.request}
               openrpcDocument={parsedSchema}

@@ -1,15 +1,93 @@
-# OpenRPC Playground
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=open-rpc/playground)](https://dependabot.com)
-
-![openrpc-playground-screenshot](https://user-images.githubusercontent.com/364566/60648033-ef5d6580-9df3-11e9-8b48-5e239f0c7574.png)
+# CSC OpenRPC Playground
 
 This is a tool for editing, validating and previewing [OpenRPC documents](https://spec.open-rpc.org/#openrpc-document).
 
+This repository is based on OpenRPC playground fork, we respect the great work of OpenRPC team very much.
 
 ## What is it?
+
 This is meant to be an all-in-one developer portal for [OpenRPC documents](https://spec.open-rpc.org/#openrpc-document). It includes an editor and a live-preview of the documentation.
 
 This helps developers visualize the OpenRPC and iterate very quickly on creating [OpenRPC documents](https://spec.open-rpc.org/#openrpc-document) via the built in editor tooling.
+
+## Build and Run
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### Requirement
+
+* We suggest that you install Node.js 14.0+.
+
+* Install `serve` with command `npm install -g serve`.
+
+### Available Scripts
+
+In the project directory, you can run:
+
+##### `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
+
+##### `npm test`
+
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+##### `npm run build`
+
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### Build and Run
+
+#### Clean
+
+Remove old build directory:
+```
+rm -fr build
+```
+
+#### Install package
+
+```
+npm i
+```
+
+#### Build
+
+```
+npm run build
+```
+
+#### Run
+
+Run server with port 5000:
+```
+serve -s build -l 5000
+```
+
+#### Run with Supervisor
+
+You can see the config in `scripts/deploy/supervisor/csc-playground.conf`.
+
+#### Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+#### Contribution Resources
+
+How to contribute, build and release are outlined in [CONTRIBUTING.md](CONTRIBUTING.md), [BUILDING.md](BUILDING.md) and [RELEASING.md](RELEASING.md) respectively. Commits in this repository follow the [CONVENTIONAL_COMMITS.md](CONVENTIONAL_COMMITS.md) specification.
 
 ## Usage
 
@@ -28,46 +106,9 @@ Navigate to [playground.open-rpc.org](https://playground.open-rpc.org/) and star
 - `CMD + K + V` - toggle vim mode
 - `CMD + K + R` - replace meta schema
 
-## Configuration via Query String Parameters
-The query string parameters can be used to configure the playground in different ways.
-
-###### `uiSchema`
-`uiSchema` is used for UI layer configuration. here is its interface:
-
-![image](https://user-images.githubusercontent.com/364566/63297271-d6b2ed00-c285-11e9-83ff-920e77b3c182.png)
-
-###### `schemaUrl`
-`schemaUrl` - fetch schema by URL and display it as the content of the playground on startup.
-
-###### `schema`
-`schema`  - JSON String used to  display it as the content of the playground on startup.
-
-examples:
-
-- set splitView to false
-  - `http://playground.open-rpc.org/?uiSchema[appBar][ui:splitView]=false`
-- hide appbar input bar
-  - `http://playground.open-rpc.org/?uiSchema[appBar][ui:input]=false`
-- hide appbar examples dropdown
-  - `http://playground.open-rpc.org/?uiSchema[appBar][ui:examplesDropdown]=false`
-- provide custom name and logo
-- `http://playground.open-rpc.org/?uiSchema[appBar][ui:title]=My Site&uiSchema[appBar][ui:logoUrl]=https://github.com/open-rpc/design/raw/master/icons/open-rpc-logo-noText/open-rpc-logo-noText%20(PNG)/128x128.png`
-
-#### Pro tip
-
-If you want to use the content of a __Github Gist__ with the playground, you can:
-- use the _latest revision_ for a Gist file
-```
-https://playground.open-rpc.org/?schemaUrl=https://gist.githubusercontent.com/[gist username]/[gist ID]/raw/[file name]
-```
-
-- use a _specific revision_ for a Gist file:
-```
-https://playground.open-rpc.org/?schemaUrl=https://gist.githubusercontent.com/[gist username]/[gist ID]/raw/[gist commit ID]/[file name]
-```
-
 ## Resources and Inspirations
 
+- [open-rpc/playground](https://github.com/open-rpc/playground)
 - [open-rpc/spec](https://github.com/open-rpc/spec)
 - [open-rpc/docs-react](https://github.com/open-rpc/docs-react)
 - [Swagger Editor](https://editor.swagger.io/)
@@ -80,45 +121,3 @@ https://playground.open-rpc.org/?schemaUrl=https://gist.githubusercontent.com/[g
 - [Monaco Editor](https://microsoft.github.io/monaco-editor/)
 - [Microsoft/vscode](https://github.com/Microsoft/vscode)
 - [theia-ide/theia](https://github.com/theia-ide/theia)
-
-
-## Contributing
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-##### Available Scripts
-
-In the project directory, you can run:
-
-###### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-###### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-###### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-##### Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-##### Contribution Resources
-
-How to contribute, build and release are outlined in [CONTRIBUTING.md](CONTRIBUTING.md), [BUILDING.md](BUILDING.md) and [RELEASING.md](RELEASING.md) respectively. Commits in this repository follow the [CONVENTIONAL_COMMITS.md](CONVENTIONAL_COMMITS.md) specification.
