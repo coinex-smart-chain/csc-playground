@@ -802,6 +802,60 @@
           "type": "boolean"
         }
       }
+    },
+    {
+      "name": "eth_subscribe",
+      "summary": "Subscriptions are creates with a regular RPC call with eth_subscribe as method and the subscription name as first parameter. If successful this returns the subscription id. ",
+      "params": [
+        {
+          "name": "name",
+          "schema": {
+            "title": "name",
+            "type": "string",
+            "enum": [
+              "newHeads",
+              "logs",
+              "newPendingTransactions",
+              "syncing"
+            ]
+          },
+          "required": true
+        },
+        {
+          "name": "args",
+          "schema": {
+            "title": "args"
+          }
+        }
+      ],
+      "result": {
+        "name": "subscriptionId",
+        "schema": {
+          "title": "id",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "eth_unsubscribe",
+      "summary": "Subscriptions are cancelled with a regular RPC call with eth_unsubscribe as method and the subscription id as first parameter.",
+      "params": [
+        {
+          "name": "subscriptionId",
+          "schema": {
+            "title": "id",
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "result": {
+        "name": "unsubscribeSuccess",
+        "description": "It returns a bool indicating if the subscription was cancelled successfully.",
+        "schema": {
+          "type": "boolean"
+        }
+      }
     }
   ],
   "components": {
