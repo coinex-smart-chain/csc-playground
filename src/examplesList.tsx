@@ -20,6 +20,10 @@ export default [
     url: "https://rpc4.coinex.net", //tslint:disable-line
   },
   {
+    name: "Testnet RPC",
+    url: "https://testnet-rpc.coinex.net", //tslint:disable-line
+  },
+  {
     name: "Testnet RPC1",
     url: "https://testnet-rpc1.coinex.net", //tslint:disable-line
   },
