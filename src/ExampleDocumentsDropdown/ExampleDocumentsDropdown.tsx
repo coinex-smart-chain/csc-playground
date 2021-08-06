@@ -42,7 +42,7 @@ const ExampleDocumentsDropdown: React.FC<IProps> = ({ examples, onChange }) => {
           variant="outlined"
           endIcon={<DropdownIcon />}
           style={{ height: "38px", fontSize: "11px", marginLeft: "10px" }}
-        >examples</Button>
+        >networks</Button>
       </Tooltip>
       <Menu
         id="simple-menu"
