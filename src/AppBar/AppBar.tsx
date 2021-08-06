@@ -75,7 +75,7 @@ class ApplicationBar extends Component<IProps> {
             </Grid>
             <Hidden smDown>
               <Grid item container justify="center" alignItems="center" sm={7} >
-                {/*<Grid item>
+                <Grid item>
                   <TransportDropdown
                     transports={this.props.transportList}
                     onAddTransport={this.props.onTransportAdd}
@@ -85,7 +85,7 @@ class ApplicationBar extends Component<IProps> {
                       marginLeft: "10px",
                     }}
                   />
-                </Grid>*/}
+                </Grid>
                 <Grid item sm={6}>
                   {this.props.uiSchema && this.props.uiSchema.appBar && this.props.uiSchema.appBar["ui:input"] &&
                     <Paper style={{

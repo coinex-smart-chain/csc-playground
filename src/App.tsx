@@ -29,7 +29,7 @@ import fetchUrlSchemaFile from "./fetchUrlSchemaFile";
 import queryParamsStore from "./stores/queryParamsStore";
 import { useDebounce } from "use-debounce";
 
-const defaultUrl = "https://rpc.coinex.net";
+const defaultOpenRPCUrl = "https://raw.githubusercontent.com/coinex-smart-chain/csc-playground/master/openrpc.json"
 
 const App: React.FC = () => {
   const [defaultValue, setDefaultValue] = useDefaultEditorValue();
@@ -129,38 +129,20 @@ const App: React.FC = () => {
     getQueryTransport(),
   );
   const refreshOpenRpcDocument = async () => {
-    // handle .json urls
-    if (searchUrlDebounced && searchUrlDebounced.includes(".json")) {
-      const rd = await fetchUrlSchemaFile(searchUrlDebounced);
-      setDefaultValue(rd);
-      return setResults(rd);
-    }
-    try {
-      const d = await transport?.sendData({
-        internalID: 999999,
-        request: {
-          jsonrpc: "2.0",
-          params: [],
-          id: 999999,
-          method: "rpc.discover",
-        },
-      });
-      const rd = JSON.stringify(d, null, 2);
-      if (rd) {
-        setDefaultValue(rd);
-        setResults(rd);
-      }
-    } catch (e) {
-      setError(e.message);
-    }
+    const rd = await fetchUrlSchemaFile(defaultOpenRPCUrl);
+    setDefaultValue(rd);
+    return setResults(rd);
   };
 
   useEffect(() => {
-    if (searchUrlDebounced && transport) {
-      refreshOpenRpcDocument();
-    }
+    refreshOpenRpcDocument();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchUrlDebounced, transport]);
+  }, []);
+
+  useEffect(() => {
+    setSearchUrl(examples[0].url);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (inspectorContents) {
@@ -214,7 +196,9 @@ const App: React.FC = () => {
         }}
         right={
           <>
-            <Inspector hideToggleTheme={true} url={defaultUrl}
+            <Inspector hideToggleTheme={true} url={
+              searchUrlDebounced
+            }
               transport={selectedTransportType.type !== "plugin" ? selectedTransportType.type : undefined}
               request={inspectorContents && inspectorContents.request}
               openrpcDocument={parsedSchema}
