@@ -21,10 +21,14 @@ export default [
   },
   {
     name: "Testnet RPC1",
-    url: "https://testnet-rpc1.coinex.net/", //tslint:disable-line
+    url: "https://testnet-rpc1.coinex.net", //tslint:disable-line
   },
   {
     name: "Testnet RPC2",
-    url: "https://testnet-rpc2.coinex.net/", //tslint:disable-line
+    url: "https://testnet-rpc2.coinex.net", //tslint:disable-line
+  },
+  {
+    name: "Localhost 8545",
+    url: "http://localhost:8545", //tslint:disable-line
   },
 ];
