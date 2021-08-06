@@ -13,7 +13,7 @@
     {
       "name": "web3_clientVersion",
       "description": "Returns the version of the current client",
-      "summary": "current client version",
+      "summary": "Current client version",
       "params": [],
       "result": {
         "name": "clientVersion",
@@ -65,7 +65,7 @@
     },
     {
       "name": "net_listening",
-      "summary": "returns listening status",
+      "summary": "Returns listening status",
       "description": "Determines if this client is listening for new network connections.",
       "params": [],
       "result": {
@@ -90,7 +90,7 @@
     },
     {
       "name": "net_peerCount",
-      "summary": "number of peers",
+      "summary": "Number of peers",
       "description": "Returns the number of peers currently connected to this client.",
       "params": [],
       "result": {
